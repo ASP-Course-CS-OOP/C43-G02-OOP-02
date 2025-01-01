@@ -50,6 +50,31 @@ namespace Assignment
 
             //Console.WriteLine($"Distance between the points: {distance:F3}");
             #endregion
+
+            #region 3- Create a struct called "Person" with properties "Name" and "Age". Write a C# program that takes details of 3 persons as input from the user and displays the name and age of the oldest person.
+            //Person[] persons = new Person[3];
+
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    Console.WriteLine($"Enter Data Of Person {i + 1} => ");
+            //    Console.Write($"Person {i+1} Name => ");
+            //    persons[i].Name = Console.ReadLine()!;
+            //    Console.Write($"Person {i + 1} Age => ");
+            //    int.TryParse(Console.ReadLine(), out int age);
+            //    persons[i].Age = age;
+            //    Console.WriteLine();
+            //}
+            
+            //Person oldPerson = persons[0];
+            //for (int i = 0; i < persons.Length; i++)
+            //{
+            //    if (persons[i].Age > oldPerson.Age)
+            //    {
+            //        oldPerson = persons[i];
+            //    }
+            //}
+            //Console.WriteLine($"old person => Name: {oldPerson.Name}, Age: {oldPerson.Age}");
+            #endregion
         }
     }
 }
