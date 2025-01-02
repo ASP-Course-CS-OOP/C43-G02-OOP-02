@@ -11,19 +11,21 @@ namespace Assignment
             //for (int i = 0; i < Persons.Length; i++)
             //{
             //    Console.WriteLine($"Enter Person {i + 1} Data => ");
-            //    Console.Write($"Person {i + 1} Name => ");
-            //    Persons[i].Name = Console.ReadLine()!;
-            //    Console.Write($"Person {i + 1} Age => ");
+            //    Console.Write($"Name => ");
+            //    string Name = Console.ReadLine()!;
+            //    Console.Write($"Age => ");
             //    int.TryParse(Console.ReadLine(), out int age);
-            //    Persons[i].Age = age;
+
+            //    Persons[i] = new Person(Name, age);
+
             //    Console.WriteLine();
             //}
 
             //Console.WriteLine("Persons Data => ");
             //for (int i = 0; i < Persons.Length; i++)
             //{
-            //    Console.WriteLine($"person {i + 1} Name => {Persons[i].Name}");
-            //    Console.WriteLine($"person {i + 1} Age => {Persons[i].Age}");
+            //    Console.WriteLine($"person {i + 1} => Name: {Persons[i].Name}, Age: {Persons[i].Age}.");
+
             //    Console.WriteLine();
             //}
             #endregion
@@ -64,7 +66,7 @@ namespace Assignment
             //    persons[i].Age = age;
             //    Console.WriteLine();
             //}
-            
+
             //Person oldPerson = persons[0];
             //for (int i = 0; i < persons.Length; i++)
             //{
@@ -75,6 +77,7 @@ namespace Assignment
             //}
             //Console.WriteLine($"old person => Name: {oldPerson.Name}, Age: {oldPerson.Age}");
             #endregion
+
         }
     }
 }
