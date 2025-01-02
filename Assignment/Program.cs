@@ -59,11 +59,13 @@ namespace Assignment
             //for (int i = 0; i < 3; i++)
             //{
             //    Console.WriteLine($"Enter Data Of Person {i + 1} => ");
-            //    Console.Write($"Person {i+1} Name => ");
-            //    persons[i].Name = Console.ReadLine()!;
-            //    Console.Write($"Person {i + 1} Age => ");
+            //    Console.Write($"Name => ");
+            //    string Name = Console.ReadLine()!;
+            //    Console.Write($"Age => ");
             //    int.TryParse(Console.ReadLine(), out int age);
-            //    persons[i].Age = age;
+
+            //    persons[i] = new Person(Name, age);
+
             //    Console.WriteLine();
             //}
 
