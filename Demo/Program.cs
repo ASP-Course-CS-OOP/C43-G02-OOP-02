@@ -1,4 +1,6 @@
-﻿namespace Demo
+﻿using System.Runtime.InteropServices;
+
+namespace Demo
 {
     internal class Program
     {
@@ -91,6 +93,41 @@
 
             //Point p1 = new Point(50, 100);
             //Console.WriteLine(p1.ToString());//(50,100)
+
+            #endregion
+
+            #endregion
+
+            #region Part 02 Struct - Memory Allocation [Check NoteBook For More Details]
+
+            #region Memory Allocation
+            /*
+
+                    * struct is value type so struct object stored in STACK.
+
+                    * Point p1;
+                    * - p1 is object in STACk of type point(struct).
+                    * - CLR will Allocate (n) uninitialized bytes in STACk based on size of data in struct.
+
+                    * p1 = new Point(2,5);
+                    * - new used for choose constructor type, in this case choose the parametrized constructor.
+                    * - Initialized the data in struct object "p1" with ( x = 2, y = 5)
+
+            */
+            #endregion
+
+            #region When Say that this type will be struct or class?
+
+            /*
+
+                 * You Choose the type to be struct or class based on 
+                 * 1- object size [size of data inside object].
+                 * 2- Memory Allocation Mechanism
+                 *      struct -> Stack [Fast Access to data] [Short life time for object because it's associated with life time of function that it declared in it]
+                 *      class -> Heap   [slow Access to data] [Long life time for object because it's not associated with any thing, object will be in HEAP until be Unreachable object and Garbage Collector delete it]
+                 * 3- Inheritance Support [struct not support inheritance - class support inheritance]     
+             
+             */
 
             #endregion
 
