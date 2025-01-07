@@ -1,4 +1,7 @@
-﻿using System.Runtime.InteropServices;
+﻿using Demo.Encapsulation;
+using System.Runtime.InteropServices;
+using System.Transactions;
+using System.Xml.Linq;
 
 namespace Demo
 {
@@ -137,6 +140,103 @@ namespace Demo
             //Done In NoteBook
             //OOP pillars -> [ Encapsulation - Inheritance - Polymorphism - Abstraction ].
             #endregion
+
+            #region Part 04 OOP Pillars - Encapsulation
+
+            //Employee emp = new Employee(1000, "Eslam", 10_000,22);
+            //Console.WriteLine(emp);//State(data) of the object "emp"
+
+            //What if i need to change/modify/access the value of "id" of this object "emp" to 1001?
+            #region Change/set & get value of attribute through attribute itself by make attribute nonprivate [Violate Encapsulation].
+            //Employee emp = new Employee(1000, "Eslam", 10_000, 22);
+
+            //emp.id = 1001;//set the attribute (id) through the attribute itself not through setter method.
+            //Console.WriteLine(emp.id);//get the attribute (id) through the attribute itself. not through getter method.
+
+            /*
+                 * In This Case (Development Against Fields/Attributes) itself outside the class/struct (violate Encapsulation pillar) I Fall Into 3 Problems : 
+                 * 1- Changing on public attribute affect the lines that use this attribute inside & outside class [Error] | it's easy to rename inside class but what about outside class? [hard].
+                 *   like if i change name of "id" attribute to "code".
+                 *   emp.id = 1000;//Error.
+
+                 * 2- You can't make the public attribute to be readonly attribute, mean that you can get it but you can't set it.
+                 *    that's because it's public so you can set&get it.
+                 *    if you make it private you can't set&get it.
+  
+                 * 3- You can't validate the value be setted to the nonprivate attribute when set it using attribute itself.
+                 *     emp.id = 100000;//What if you need to say that max num of id is 4000 ? - You can't make this.
+             */
+
+            #endregion
+
+            #region Apply Encapsulation (Change/set & get value of attribute) through Setter & Getter Methods [Old Approach].
+            //Employee emp = new Employee(1000, "Eslam", 10_000, 22);
+
+            //emp.SetId(1001);
+            //Console.WriteLine(emp.getID());//1001
+
+            /*
+                 * In This Case Development Against Methods(Setters&Getters) outside the class/struct (Apply Encapsulation pillar) Solve the 3 problems : 
+                 * 1- Changing on attribute[name or type] not affect the lines that use this attribute outside project because we deal with this attribute outside class using methods [setters & getters].
+
+                 * 2- You can make the attribute to be readonly attribute, mean that you can get it but you can't set it, by making the setter method "private" or delete the set method.
+                 *   private void SetID(int id) => this.id = id;
+
+  
+                 * 3- You can validate the value be setted to the attribute through set method.
+                 *      public void SetId(int id)
+                 *      {
+                 *          this.id = (id > 1000 & id < 10000) ? id : 9999;
+                 *      }
+             */
+
+            //emp.SetId(100000);//id attribute must be by value greater than (1000) and less than (10000) to be setted to "id" of the object, other wise it will be settted to default value (9999).
+            //Console.WriteLine(emp.getID());//9999
+            #endregion
+
+            #region Apply Encapsulation (Change/set & get value of attribute) through Properties [New Approach] [Recommended because it's like you deal with field direct].
+            //Employee emp = new Employee(1000, "Eslam", 10_000,22);
+
+            //emp.Name = "Eslam Ashraf";
+            //Console.WriteLine(emp.Name);//Eslam Ashraf
+
+            //Console.Write("Enter New Name: ");
+            //emp.Name = Console.ReadLine();// Not Enter AnyThing | Enter Space
+            //Console.WriteLine(emp.Name);//No Name
+
+            #endregion
+
+            #region Using "init" with attribute make modidication on attribute with "init" happen using object initializer only. 
+
+            // Employee emp = new Employee() { Name = "Eslam Elsaadany" };
+            // Console.WriteLine(emp.Name);//Eslam Elsaa
+
+            //// emp.Name = "Hamada";//init property can only assigned in an object initializer.
+
+
+            #endregion
+
+            #region Try Automatic Property
+
+            //Employee emp = new Employee();
+            //emp.Age = 22;
+            //Console.WriteLine(emp.Age);//22 
+
+            #endregion
+
+            #region print State of object emp of Type Employee [struct].
+
+            //Employee emp = new Employee(1000, "Eslam Elsaadany", 2000, 22);
+
+            //Console.WriteLine(emp);// ID = 1000
+            //                       // Name = Eslam Elsa
+            //                       // Salary = $5,000.00
+            //                       // Age = 22
+
+            #endregion
+
+            #endregion;
+
 
         }
     }
