@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Transactions;
 using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Demo
 {
@@ -236,6 +237,124 @@ namespace Demo
             #endregion
 
             #endregion;
+
+            #region Part 05 Encapsulation (Continued) - Indexer
+
+            #region Ex01
+            //PhoneBook note = new PhoneBook();
+            //note.AddPerson(0, "Eslam", 01022010887);
+            //note.AddPerson(1, "Ahmed", 0102689810887);
+            //note.AddPerson(2, "Hany", 01022786287);
+            //note.AddPerson(3, "Khaled", 010220250887);
+
+            //Console.WriteLine(note.getNumber("Eslam"));// (0) -> Because There is no names array initialized and no numbers array initialized
+            // you invoked the default constructor only that initialize fields with default value
+            // not invoked the parameter constructor that make object of type array of string
+            // and object of type array of ulong that of size (size) parameter and initialized with default value
+            //note.getNumber() => return 0 if the names[] or numbers[] are not object/refer to null 
+            #endregion
+
+            #region Ex02
+
+            //PhoneBook note = new PhoneBook(10);
+            //note.AddPerson(0, "Eslam", 01022010887);
+            //note.AddPerson(1, "Ahmed", 0102689810887);
+            //note.AddPerson(2, "Hany", 01022786287);
+            //note.AddPerson(3, "Khaled", 010220250887);
+
+
+            //Console.WriteLine(note.getNumber("Eslaam"));//1022010887
+
+            //note.setNumber("Eslam", 01015575349);
+            //Console.WriteLine(note.getNumber("Eslam"));//1015575349
+
+            //note.setNumber("Hanya", 01015575349);//Can't Found This Person [number Not Updated].
+            //Console.WriteLine(note.getNumber("Hany"));//1022786287 [Number of hany still not changed]
+
+            #endregion
+
+            #region Ex03 => Using Indexer To Set Number and Get Number using name of the person
+
+            //PhoneBook note = new PhoneBook(10);
+            //note.AddPerson(0, "Eslam", 01022010887);
+            //note.AddPerson(1, "Ahmed", 0102689810887);
+            //note.AddPerson(2, "Hany", 01022786287);
+            //note.AddPerson(3, "Khaled", 010220250887);
+
+            //Console.WriteLine(note["Khaled"]);//10220250887
+
+            //note["Khaled"] = 01015575349; 
+            //Console.WriteLine(note["Khaled"]);//1015575349 [الصفر على الشمال ملوش معنى]
+
+            #endregion
+
+            #region EX04 print object data.
+
+            //PhoneBook note = new PhoneBook(10);
+            //note.AddPerson(0, "Eslam", 01022010887);
+            //note.AddPerson(1, "Ahmed", 0102689810887);
+            //note.AddPerson(2, "Hany", 01022786287);
+            //note.AddPerson(3, "Khaled", 010220250887);
+
+            #region Using Method
+
+            //note.printPersons();   // 1- (Eslam, 1022010887)
+            //                       // 2 - (Ahmed, 102689810887)
+            //                       // 3 - (Hany, 1022786287)
+            //                       // 4 - (Khaled, 1015575349)
+            //                       // 5 - (, 0)
+            //                       // 6 - (, 0)
+            //                       // 7 - (, 0)  That's because i make object names[] & numbers[] of size 10 and initialized with the dafault value and i not filled them.         
+            //                       // 8 - (, 0)  [ name[string] (array of string) (referenceType) => null , numbers[ulong] (array of ulong) (valueType) => 0 ]
+            //                       // 9 - (, 0)
+            //                       // 10 - (, 0)  
+
+            #endregion
+
+            #region Using Indexer that take index and return name&number of person as string
+
+            //for (int i = 0; i < note.Size; i++)
+            //{
+            //    Console.WriteLine(note[i]);
+            //}
+            //// 1- (Eslam, 1022010887)
+            //// 2 - (Ahmed, 102689810887)
+            //// 3 - (Hany, 1022786287)
+            //// 4 - (Khaled, 1015575349)
+            //// 5 - (, 0)
+            //// 6 - (, 0)
+            //// 7 - (, 0) 
+            //// 8 - (, 0)  
+            //// 9 - (, 0)
+            //// 10 - (, 0)  
+
+            #endregion
+
+            #region print object data [print only Real data] [not print the content of index with value null in names[string] array && not print the content of index with value 0 in numbers[ulong] array].
+
+            #region Using Property Length
+
+            //for (int i = 0; i < note.Length; i++)
+            //{
+            //    Console.WriteLine(note[i]);
+            //} 
+
+            #endregion
+
+            #region Using Method countPersons()
+
+            //for (int i = 0; i < note.countPersons(); i++)
+            //{
+            //    Console.WriteLine(note[i]);
+            //}
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #endregion
 
 
         }
