@@ -6,29 +6,7 @@ namespace Assignment
     {
         static void Main(string[] args)
         {
-            #region 1- Define a struct "Person" with properties "Name" and "Age". Create an array of three "Person" objects and populate it with data. Then, write a C# program to display the details of all the persons in the array.
-            //Person[] Persons = new Person[3];
-            //for (int i = 0; i < Persons.Length; i++)
-            //{
-            //    Console.WriteLine($"Enter Person {i + 1} Data => ");
-            //    Console.Write($"Name => ");
-            //    string Name = Console.ReadLine()!;
-            //    Console.Write($"Age => ");
-            //    int.TryParse(Console.ReadLine(), out int age);
-
-            //    Persons[i] = new Person(Name, age);
-
-            //    Console.WriteLine();
-            //}
-
-            //Console.WriteLine("Persons Data => ");
-            //for (int i = 0; i < Persons.Length; i++)
-            //{
-            //    Console.WriteLine($"person {i + 1} => Name: {Persons[i].Name}, Age: {Persons[i].Age}.");
-
-            //    Console.WriteLine();
-            //}
-            #endregion
+            
 
             #region 2- Create a struct called "Point" to represent a 2D point with properties "X" and "Y". Write a C# program that takes two points as input from the user and calculates the distance between them.
             //Console.Write("Enter coordinate(X) of point 1: ");
@@ -80,6 +58,50 @@ namespace Assignment
             //Console.WriteLine($"old person => Name: {oldPerson.Name}, Age: {oldPerson.Age}");
             #endregion
 
+
+
+            #region Q1- Define a struct "Person" with properties "Name" and "Age". Create an array of three "Person" objects and populate it with data. Then, write a C# program to display the details of all the persons in the array.
+
+            #region Q1.1
+
+            //Person03 p01 = new Person03(3);
+            //p01.AddPerson(1, "Eslam", 22);
+            //p01.AddPerson(2, "Ahmed", 23);
+            //p01.AddPerson(3, "Hany", 24);
+
+            //p01.printPersons();  
+
+            #endregion
+
+            #region Q1.2
+
+            //Person02[] p01 = new Person02[3];
+            //for (int i = 0; i < p01.Length; i++)
+            //{
+            //    Console.WriteLine($"Enter Data Of Person {i + 1} => ");
+            //    Console.Write("Name: ");
+            //    string name = Console.ReadLine()!;
+            //    bool isParsed;
+            //    int age;
+            //    do
+            //    {
+            //        Console.Write("Age: ");
+            //        isParsed = int.TryParse(Console.ReadLine(), out age); 
+            //    } while (!isParsed || age >100 || age<15 );
+
+            //    Console.WriteLine();
+
+            //    p01[i] = new Person02(name, age);
+            //}
+
+            //for (int i = 0; i < p01.Length; i++)
+            //{
+            //    Console.WriteLine($"Person {i + 1} => (Name: {p01[i].Name}, Age: {p01[i].Age})");
+            //} 
+
+            #endregion
+
+            #endregion
         }
     }
 }

@@ -6,15 +6,24 @@ using System.Threading.Tasks;
 
 namespace Assignment
 {
-    internal struct Person
+    internal struct Person02
     {
+
+        #region Properties
+
         public string Name { get; set; }
         public int Age { get; set; }
 
-        public Person(string name, int age)
+        #endregion
+
+        #region Constructors
+
+        public Person02(string name,int age)
         {
             Name = name;
             Age = age;
         }
+
+        #endregion
     }
 }
